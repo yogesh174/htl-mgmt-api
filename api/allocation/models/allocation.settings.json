@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "allocations",
+  "info": {
+    "name": "Allocation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "allocatedTo": {
+      "via": "allocation",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "allocatedBy": {
+      "via": "allocationsMade",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "hostel": {
+      "via": "allocation",
+      "model": "hostel"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "allocated",
+        "vacant"
+      ],
+      "required": true
+    },
+    "allocatedOn": {
+      "type": "datetime"
+    }
+  }
+}

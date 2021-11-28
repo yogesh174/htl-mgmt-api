@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hostels",
+  "info": {
+    "name": "Hostel",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blockNumber": {
+      "type": "integer",
+      "required": true
+    },
+    "roomNumber": {
+      "type": "integer",
+      "required": true
+    },
+    "allocation": {
+      "via": "hostel",
+      "model": "allocation"
+    }
+  }
+}
